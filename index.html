@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNews - Restez Informé</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <!-- Bouton Retour en haut -->
+
+    <div id="back-to-top" class="back-to-top" aria-label="Retour en haut">
+        <!-- Cercle de progression SVG -->
+        <svg width="48" height="48">
+            <!-- Cercle de fond (gris) -->
+            <circle cx="24" cy="24" r="20" stroke="#e0e0e0" stroke-width="3" fill="none"></circle>
+
+            <!-- Cercle de progression (se remplit au scroll) -->
+            <circle cx="24" cy="24" r="20" stroke="#667eea" stroke-width="3" fill="none" stroke-dasharray="125.6"
+                stroke-dashoffset="125.6"></circle>
+        </svg>
+
+        <!-- Icône flèche -->
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">TechNews</div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Bienvenue sur TechNews</h1>
+            <p class="hero-subtitle">Votre source d'information pour les dernières actualités technologiques</p>
+            <a href="#newsletter" class="cta-button">S'abonner maintenant</a>
+        </div>
+    </section>
+
+    <!-- leaflet map -->
+
+    <div class="leaflet-container">
+        <h2>🌿 Carte Leaflet.js - Stations Météo Mondiales</h2>
+        <div id="map" style="width: 100%; height: 500px;"></div>
+    </div>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <h2 class="section-title">Articles Récents</h2>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">IA</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>L'Intelligence Artificielle révolutionne le développement web</h3>
+                        <p>Découvrez comment l'IA transforme la façon dont nous créons des applications web modernes et
+                            améliore l'expérience utilisateur.</p>
+                        <span class="article-date">28 Novembre 2025</span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">WEB3</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Le Web3 et l'avenir de l'Internet décentralisé</h3>
+                        <p>Explorez les technologies blockchain et leur impact sur la prochaine génération
+                            d'applications web décentralisées.</p>
+                        <span class="article-date">25 Novembre 2025</span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">CYBER</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Sécurité informatique : les menaces de 2025</h3>
+                        <p>Analyse des nouvelles cybermenaces et des meilleures pratiques pour protéger vos données en
+                            ligne.</p>
+                        <span class="article-date">22 Novembre 2025</span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">CLOUD</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Cloud Computing : tendances et innovations</h3>
+                        <p>Les dernières avancées dans le cloud computing et comment elles transforment les
+                            infrastructures d'entreprise.</p>
+                        <span class="article-date">20 Novembre 2025</span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">DEV</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Les frameworks JavaScript à suivre en 2025</h3>
+                        <p>Tour d'horizon des frameworks et bibliothèques JavaScript qui dominent le développement web
+                            moderne.</p>
+                        <span class="article-date">18 Novembre 2025</span>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <div class="placeholder-image">MOBILE</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Développement mobile : React Native vs Flutter</h3>
+                        <p>Comparaison approfondie des deux technologies leaders pour le développement d'applications
+                            mobiles cross-platform.</p>
+                        <span class="article-date">15 Novembre 2025</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">À Propos de TechNews</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>TechNews est votre source fiable d'informations sur les dernières tendances technologiques.
+                        Depuis 2020, nous nous engageons à fournir des articles de qualité, des analyses approfondies et
+                        des tutoriels pratiques pour les passionnés de technologie.</p>
+
+                    <p>Notre équipe de rédacteurs expérimentés couvre un large éventail de sujets, du développement web
+                        à l'intelligence artificielle, en passant par la cybersécurité et le cloud computing.</p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>50K+</h3>
+                            <p>Lecteurs mensuels</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Articles publiés</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Experts contributeurs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="newsletter-header">
+                    <h2>📧 Inscrivez-vous à notre newsletter</h2>
+                    <p>Recevez nos dernières actualités directement dans votre boîte mail.</p>
+                    <p class="newsletter-benefits">Rejoignez plus de 10 000 abonnés qui reçoivent chaque semaine :</p>
+                    <ul class="benefits-list">
+                        <li>✓ Les dernières actualités tech</li>
+                        <li>✓ Des tutoriels exclusifs</li>
+                        <li>✓ Des analyses approfondies</li>
+                        <li>✓ Des offres spéciales</li>
+                    </ul>
+                </div>
+
+                <form id="newsletterForm" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Votre nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Votre email</label>
+                        <input type="email" id="email" name="email" placeholder="jean.dupont@example.com" required>
+                    </div>
+
+                    <button type="submit">S'inscrire gratuitement</button>
+                </form>
+
+                <div id="message" class="message"></div>
+
+                <p class="privacy-note">🔒 Vos données sont sécurisées. Pas de spam, désinscription possible à tout
+                    moment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechNews</h3>
+                    <p>Votre source d'information technologique de confiance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">CGU</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>contact@technews.com</p>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechNews. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([54.526, 15.2551], 4);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        }).addTo(map);
+
+        // Récupérer les stations météo depuis l'API Open-Meteo (gratuite, sans clé API)
+
+        const cities = [
+            { name: 'Paris', lat: 48.8566, lon: 2.3522 },
+            { name: 'Londres', lat: 51.5074, lon: -0.1278 },
+            { name: 'Berlin', lat: 52.5200, lon: 13.4050 },
+            { name: 'Madrid', lat: 40.4168, lon: -3.7038 },
+            { name: 'Rome', lat: 41.9028, lon: 12.4964 }
+        ];
+
+        cities.forEach(city => {
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const temp = Math.round(data.current.temperature_2m);
+                    const humidity = data.current.relative_humidity_2m;
+                    const windSpeed = Math.round(data.current.wind_speed_10m);
+                    const weatherCode = data.current.weather_code;
+
+                    // Code météo simplifié
+                    let weatherIcon = '☁️';
+                    let weatherDesc = 'Nuageux';
+                    if (weatherCode === 0) { weatherIcon = '☀️'; weatherDesc = 'Ensoleillé'; }
+                    else if (weatherCode <= 3) { weatherIcon = '⛅'; weatherDesc = 'Partiellement nuageux'; }
+                    else if (weatherCode <= 67) { weatherIcon = '🌧️'; weatherDesc = 'Pluvieux'; }
+                    else if (weatherCode <= 77) { weatherIcon = '🌨️'; weatherDesc = 'Neigeux'; }
+                    else if (weatherCode <= 99) { weatherIcon = '⛈️'; weatherDesc = 'Orageux'; }
+
+                    L.marker([city.lat, city.lon]).addTo(map)
+                        .bindPopup(`
+                            <b>${city.name}</b><br>
+                            🌡️ Température: ${temp}°C<br>
+                            ${weatherIcon} ${weatherDesc}<br>
+                            💧 Humidité: ${humidity}%<br>
+                            💨 Vent: ${windSpeed} km/h
+                        `);
+                })
+                .catch(error => console.error(`Error fetching weather for ${city.name}:`, error));
+        });
+    </script>
+
+    <script>
+        var backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+
+            // // Afficher le bouton après 300px de scroll avec la classe .visible
+
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            if (scrollPosition > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+
+            // Calculer le pourcentage de scroll et mettre à jour strokeDashoffset
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrollPercent = (scrollPosition / docHeight);
+            var circle = backToTopButton.querySelector('circle:nth-child(2)');
+            var radius = circle.r.baseVal.value;
+            var circumference = 2 * Math.PI * radius;
+            var offset = circumference - (scrollPercent * circumference);
+            circle.style.strokeDashoffset = offset;
+
+
+
+        });
+
+        // Clic sur le bouton pour remonter en haut
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
