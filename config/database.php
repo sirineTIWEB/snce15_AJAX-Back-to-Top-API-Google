@@ -1,10 +1,23 @@
 <?php
 
 // Configuration de la connexion à la base de données
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'newsletter');
-define('DB_USER', 'root');  // Adaptez selon votre configuration
-define('DB_PASS', '');      // Adaptez selon votre configuration
+// Detecter si on est en local ou en production
+$isLocal = ($_SERVER['HTTP_HOST'] === 'localhost' || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false);
+
+if ($isLocal) {
+    // Configuration LOCALE (développement)
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'newsletter');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    // Configuration PRODUCTION (InfinityFree)
+    define('DB_HOST', 'sql103.infinityfree.com');
+    define('DB_NAME', 'if0_40665547_newsletters');
+    define('DB_USER', 'if0_40665547');
+    define('DB_PASS', 'Mmw1YZvAte0mtB');
+}
+
 define('DB_CHARSET', 'utf8mb4');
 
 // Création de la connexion PDO
